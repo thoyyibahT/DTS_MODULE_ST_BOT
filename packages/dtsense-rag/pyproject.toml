@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "dtsense-rag"
+version = "0.1.0"
+description = "RAG DTSense using Milvus"
+authors = ["Alvin Rindra Fazrie"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8.1,<4.0"
+langchain = "^0.3.4"
+langchain-core = "^0.3.15"
+langchain-community = "^0.3.3"
+langchain-milvus = "^0.1.6"
+langchain-groq = "^0.2.1"
+pymilvus = "^2.4.9"
+scipy = "^1.9"
+
+[tool.poetry.group.dev.dependencies]
+langchain-cli = ">=0.0.33"
+fastapi = "^0.115.0"
+sse-starlette = "^1.6.5"
+
+[tool.langserve]
+export_module = "dtsense_rag"
+export_attr = "chain"
+
+[tool.templates-hub]
+use-case = "rag"
+author = "LangChain"
+integrations = ["Groq", "Milvus"]
+tags = ["vectordbs"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
