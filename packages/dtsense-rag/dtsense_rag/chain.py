@@ -1,7 +1,5 @@
 import os
 
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_milvus import Milvus
 from langchain_groq import ChatGroq
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import PromptTemplate
@@ -23,6 +21,39 @@ groq_chat = ChatGroq(
 # response = groq_chat.invoke("Who are the authors of DTSense Streamlit Book?")
 # print(response)
 
+
+# basic_chain = prompt | groq_chat | StrOutputParser()
+# response = basic_chain.invoke({"context": "", "question": "Who are the authors of DTSense Streamlit Book?"})
+# print(response)
+
+# embedding = HuggingFaceEmbeddings(
+#         model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"}
+#     )
+
+# URI = "packages/dtsense-rag/dtsense_rag/data/milvus_lite.db"
+
+# vectordb = Milvus(
+#     embedding_function=HuggingFaceEmbeddings(
+#         model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"}
+#     ),
+#     collection_name="dtsense_streamlit",
+#     connection_args={"uri": URI},
+# )
+# retriever = vectordb.as_retriever()
+
+context = ""
+
+with open("packages/dtsense-rag/dtsense_rag/data/sample.txt") as f:
+    context = f.read()
+
+# loader = TextLoader("./index.md")
+# loader.load()
+
+
+# Define a function to format the retrieved documents
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
+
 # Define the prompt template for generating AI responses
 PROMPT_TEMPLATE = """
 Human: You are an AI assistant, and provides answers to questions by using fact based and statistical information when possible.
@@ -41,44 +72,17 @@ Please answer with the same language as the question.
 
 Assistant:"""
 
+PROMPT_TEMPLATE = PROMPT_TEMPLATE.replace("{context}", context)
+
 # Create a PromptTemplate instance with the defined template and input variables
 prompt = PromptTemplate(
-    template=PROMPT_TEMPLATE, input_variables=["context", "question"]
+    template=PROMPT_TEMPLATE, input_variables=["question"]
 )
-
-# basic_chain = prompt | groq_chat | StrOutputParser()
-# response = basic_chain.invoke({"context": "", "question": "Who are the authors of DTSense Streamlit Book?"})
-# print(response)
-
-embedding = HuggingFaceEmbeddings(
-        model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"}
-    )
-
-URI = "packages/dtsense-rag/dtsense_rag/data/milvus_lite.db"
-
-# vectordb = Milvus(
-#     embedding_function=HuggingFaceEmbeddings(
-#         model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"}
-#     ),
-#     collection_name="dtsense_streamlit",
-#     connection_args={"uri": URI},
-# )
-# retriever = vectordb.as_retriever()
-
-from langchain.vectorstores import FAISS
-
-URI_FAISS = "packages/dtsense-rag/dtsense_rag/data/"
-faiss_index = FAISS.load_local(URI_FAISS, embedding, allow_dangerous_deserialization=True)
-retriever = faiss_index.as_retriever()
-
-# Define a function to format the retrieved documents
-def format_docs(docs):
-    return "\n\n".join(doc.page_content for doc in docs)
 
 # Define the RAG (Retrieval-Augmented Generation) chain for AI response generation
 chain = (
-    {"context": retriever | format_docs, "question": RunnablePassthrough()}
-    | prompt
+    # {"question": RunnablePassthrough()}
+    prompt
     | groq_chat
     | StrOutputParser()
 )
