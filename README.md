@@ -50,3 +50,8 @@ Pastikan Anda telah menginstal:
     ```bash
    uvicorn app.server:app --host 0.0.0.0 --port 8000 
    ```
+6. ADDITIONAL, Jalankan dengan STREAMLIT di Terminal
+    ```bash
+   streamlit run app.py 
+   ```
+
