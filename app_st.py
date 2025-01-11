@@ -4,7 +4,7 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-st.title("🚀 DTSense Streamlit Module Bot")
+st.title("Simple Chat Bot Thoyyibah")
 
 with st.sidebar:
     groq_api_key = st.text_input("GROQ API Key", type="password")
@@ -61,7 +61,7 @@ def generate_response(input_text):
     st.info(chain.invoke({"question": input_text}))
 
 with st.form("my_form"):
-    text = st.text_area("Enter text:", "Who are the authors of DTSense Streamlit Module?")
+    text = st.text_area("Enter text:", "Apa Masa Depan Gen AI?")
     submitted = st.form_submit_button("Submit")
     if not groq_api_key:
         st.info("Please add your GROQ API key to continue.")
