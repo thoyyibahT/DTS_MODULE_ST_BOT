@@ -1,94 +1,44 @@
-Generative AI Academy
-Extra Module: Streamlit
-Introduction to Streamlit
-Building Frontend for AI/Data Applications
-Authors/Penulis:
-I Nyoman Prayana Trisna, M.Cs.
-Alvin Rindra Fazrie, M.Sc.
-Data App with Streamlit
-Pengenalan Streamlit
-Membuat kode ataupun program untuk model machine learning saja tidak cukup, karena
-orang biasa tidak akan bisa menggunakannya. Di sini, penting untuk menerapkan model sedemikian
-rupa sehingga siapa pun dapat menggunakannya dengan mudah. Selain menggambarkan model,
-penting juga untuk menggambarkan visual dengan menarik dari data yang diberikan. Ada opsi
-berbeda seperti Django dan Flask dengan Python untuk menerapkan model maupun untuk
-memvisualisasikan data. Saat menggunakan framework ini, kita juga perlu memiliki pengetahuan
-tentang membangun front end menggunakan HTML, CSS, dan JS.
-Streamlit adalah open-source framework di Python yang memungkinkan untuk menerapkan
-tidak hanya model machine learning tetapi juga aplikasi Python apa pun dalam waktu yang singkat. Ini
-juga memungkinkan untuk menggambarkan dan memvisualisasikan data dengan lebih interaktif.
-Proses pembuatannya yang sederhana menjadi keunggulan untuk Streamlit dalam membangun
-aplikasi visualisasi ataupun machine learning.
-Keunggulan Streamlit
-Dibandingkan dengan framework Python lainnya, dalam pengembangan aplikasi visualisasi
-ataupun machine learning, Streamlit memiliki keunggulan:
-● Sederhana
-Streamlit jauh lebih mudah dan sederhana digunakan oleh data scientist untuk membangun
-dashboard
-● Interaktif
-Visualisasi dalam Streamlit dapat diinterasikan dengan menarik. Menggunakan Plotly, visual
-yang dibangun menjadi lebih menarik
-● Mudah diintegrasikan
-Streamlit dapat diintegrasikan dengan berbagai library dan framework populer untuk data
-science seperti Pandas, Matplotlib, Plotly, dan Scikit-learn
-● Deployment yang cepat
-Setelah aplikasi dibuat, Streamlit juga menyediakan cara yang mudah untuk me-deploy
-aplikasi ke berbagai platform.
-Instalasi Streamlit
-Streamlit dapat di-install secara mudah melalui pip.
-Biasanya, dalam membuat suatu aplikasi dalam Streamlit, kita membutuhkan virtual
-environment terlebih dahulu. Python Virtual Environment atau sering disebut juga dengan Python
-virtualvenv adalah alat yang membantu programmer membuat dan mengelola environment terpisah
-untuk setiap proyek Python. Cara membuat virtual environment sederhana dalam Python ditujukkan
-pada gambar di bawah.
-1
-Cara menggunakan virtual environment yang sudah dibuat adalah seperti gambar di bawah.
-Perlu dicatat bahwa <nama_virtual_env> disesuaikan dengan nama virtual environment yang
-diberikan.
-Setelah me-run snippet di atas, barulah kita dapat me-install Streamlit serta library lainnya yang
-dibutuhkan.
-Untuk menjalankan aplikasi Streamlit, mula-mula buat kode aplikasi sederhana terlebih
-dahulu. Sebagai contoh, kita buat progam hello world sederhana seperti di bawah. Kode ini disimpan
-dengan nama hello.py, misalnya.
-Bila sudah, kita bisa menjalankan aplikasi sederhana ini dengan command seperti di bawah ini.
-Maka browser akan langsung terbuka dan menjalankan aplikasi yang telah dibuat dalam hello.py.
-Fitur dalam Streamlit
-Streamlit terdiri dari berbagai fitur. Walaupun fokus pembahasan ini adalah mengenai
-visualisasi, akan tetapi elemen dalam aplikasi Streamlit tidak hanya berupa grafik visual. Selain grafik
-visualisasi, teks dan widgets juga penting dalam aplikasi yang akan dibuat.
-Text Elements
-Text elements mengacu pada elemen dalam aplikasi yang berkaitan dengan teks. Selain grafik
-visualisasi, sebuah aplikasi juga membutuhkan teks. Adapun beberapa text element yang dapat
-digunakan dalam Streamlit adalah:
-2
-Elemen Deskripsi Penulisan dalam Streamlit
-Title Judul st.title(“Title”)
-Header Header st.header(“Header”)
-Subheader Subheader st.subheader(“Subheader”)
-Markdown Teks dengan format markdown st.markdown(“**Bold Text**”)
-Code Teks dengan format kode Python st.code(“text”, language=”Python”)
-Latex Teks dengan format Latex st.latex(“Latex”)
-Penggunaan text element dalam Streamlit dicontohkan dalam kode di bawah ini.
-Adapun hasil yang diperlihatkan oleh kode di atas adalah sebagai berikut.
-3
-Widgets
-Widget dapat diartikan sebagai elemen yang mengatur jalannya suatu fungsi ataupun
-jalannya suatu komponen yang berisikan perintah tertentu. Dalam Streamlit, widget digunakan untuk
-mempermudah pengguna aplikasi untuk menjalankan dan berinteraksi dengan visualisasi yang
-diinginkan.
-Dalam Streamlit, terdapat banyak widget yang dapat digunakan. Dalam modul ini, dijelaskan
-beberapa widget seperti:
-● Button
-● Toggle
-● Checkbox
-● Radio button
-● Text Input
-● Slider
-Button
-Button digunakan sebagai tombol untuk melakukan suatu interaksi. Ketika button diklik, maka
-widget ini akan mengirimkan nilai True ke dalam aplikasi. Nilai True ini tidak dapat dikembalikan ke
-False kecuali aplikasi di-restart.
-Kode di atas menggambarkan bentuk penggunaan widget button. Apabila dijalankan, maka dalam
-aplikasi akan memiliki tampilan seperti ini.
-4
-Toggle
+Masa depan machine learning (ML) dan generative AI (Gen AI) sangat cerah dan penuh potensi. Teknologi ini terus berkembang dan memberikan dampak besar di berbagai bidang kehidupan. Berikut adalah beberapa tren dan peluang masa depan yang dapat diantisipasi:
+
+1. Peningkatan Kemampuan dan Efisiensi
+Model yang Lebih Canggih: Model AI akan semakin efisien, lebih kecil, tetapi tetap memiliki kemampuan tinggi. Contohnya, model edge AI yang dapat berjalan di perangkat dengan sumber daya terbatas.
+Penggunaan Multi-modal: Integrasi data dari berbagai sumber, seperti teks, gambar, video, dan audio, memungkinkan AI memahami konteks dengan lebih baik dan memberikan respons yang lebih akurat.
+2. Personalization di Berbagai Bidang
+Kesehatan: Gen AI akan memungkinkan personalisasi diagnosis dan perawatan medis. Contohnya, AI dapat membuat rencana diet atau terapi spesifik untuk individu.
+Pendidikan: Pembelajaran adaptif berbasis AI dapat menyesuaikan materi berdasarkan kebutuhan dan kemampuan siswa.
+Bisnis: Sistem rekomendasi yang lebih akurat untuk pelanggan, misalnya dalam e-commerce atau layanan streaming.
+3. Kreativitas dan Inovasi
+Generative AI dalam Seni: Seniman dapat memanfaatkan Gen AI untuk menciptakan karya seni digital, musik, atau bahkan film yang inovatif.
+Pengembangan Produk: AI dapat merancang prototipe produk atau simulasi desain dengan lebih cepat, memungkinkan inovasi yang lebih cepat.
+4. Transformasi Industri
+Otomasi Industri: Kombinasi ML dan Gen AI akan meningkatkan otomatisasi di berbagai sektor, seperti manufaktur, logistik, dan pertanian.
+Layanan Pelanggan: Chatbot berbasis AI akan semakin manusiawi dan mampu menangani pertanyaan kompleks.
+5. Etika dan Regulasi
+Kesadaran Etika: Ada peningkatan fokus pada pengembangan AI yang etis, termasuk mitigasi bias, privasi data, dan transparansi.
+Regulasi AI: Pemerintah di berbagai negara akan semakin mengatur penggunaan AI untuk memastikan teknologi ini digunakan secara bertanggung jawab.
+6. Ekspansi Penggunaan Generative AI
+Pemodelan dan Simulasi: Gen AI akan membantu di bidang ilmiah, seperti simulasi molekuler untuk menemukan obat baru.
+Pembuatan Konten Otomatis: Konten untuk pemasaran, blog, atau media sosial dapat dibuat dengan cepat menggunakan AI.
+7. Integrasi dengan Teknologi Lain
+Quantum Computing: Dengan hadirnya komputasi kuantum, kemampuan AI dalam memproses data akan meningkat drastis.
+IoT dan Edge Computing: AI akan semakin terintegrasi dengan perangkat pintar untuk memberikan solusi real-time.
+8. Peningkatan Pemahaman Bahasa
+Model bahasa generatif akan semakin memahami konteks budaya dan bahasa lokal, memungkinkan interaksi yang lebih natural dalam berbagai bahasa.
+9. Dampak Sosial dan Ekonomi
+Pengurangan Pekerjaan Manual: AI akan menggantikan tugas-tugas rutin, tetapi juga menciptakan peluang kerja baru yang lebih kreatif.
+Peningkatan Akses Teknologi: Dengan harga yang semakin terjangkau, lebih banyak orang akan mendapatkan manfaat dari teknologi AI.
+10. Kemajuan dalam Penelitian dan Pendidikan
+Generative AI akan menjadi alat penting dalam riset ilmiah, membantu ilmuwan menganalisis data, membuat hipotesis, dan memvisualisasikan hasil.
+Dalam pendidikan, AI dapat membantu membuat materi belajar yang interaktif dan menarik.
+Tantangan yang Perlu Dihadapi
+Keamanan dan Privasi: Bagaimana menjaga data pengguna tetap aman.
+Penyalahgunaan Teknologi: Risiko deepfake, misinformasi, atau aplikasi yang tidak etis.
+Ketergantungan pada AI: Masyarakat harus memastikan bahwa manusia tetap memegang kendali atas teknologi ini.
+Kesimpulan
+Masa depan ML dan Gen AI sangat menjanjikan, dengan potensi untuk merevolusi cara kita bekerja, belajar, dan hidup. Namun, penting untuk mengembangkan teknologi ini dengan tanggung jawab agar manfaatnya dapat dirasakan secara luas tanpa menimbulkan dampak negatif.
+
+
+
+
+
+
